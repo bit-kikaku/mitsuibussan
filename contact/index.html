@@ -45,11 +45,11 @@
 
       <form class="form" data-contact novalidate>
         <div class="field--2">
-          <div class="field"><label>会社名 <span class="req">必須</span></label><input type="text" name="company" required></div>
-          <div class="field"><label>ご担当者名 <span class="req">必須</span></label><input type="text" name="name" required></div>
+          <div class="field"><label>会社名 <span class="req">必須</span></label><input type="text" name="company" required><span class="field__err">会社名を入力してください</span></div>
+          <div class="field"><label>ご担当者名 <span class="req">必須</span></label><input type="text" name="name" required><span class="field__err">ご担当者名を入力してください</span></div>
         </div>
         <div class="field--2">
-          <div class="field"><label>メールアドレス <span class="req">必須</span></label><input type="email" name="email" required></div>
+          <div class="field"><label>メールアドレス <span class="req">必須</span></label><input type="email" name="email" required><span class="field__err">正しいメールアドレスを入力してください</span></div>
           <div class="field"><label>電話番号</label><input type="tel" name="tel"></div>
         </div>
         <div class="field">
@@ -99,11 +99,22 @@
     if(pre) sel.value=pre;
   }
   var f=document.querySelector("[data-contact]");
-  if(f) f.addEventListener("submit",function(e){
-    e.preventDefault();
-    if(!f.company.value||!f.name.value||!f.email.value){alert("会社名・ご担当者名・メールアドレスは必須です。");return;}
-    f.innerHTML='<div class="empty-state"><strong>送信を受け付けました（デモ）</strong>担当より1営業日以内にご連絡します。ありがとうございました。<div style="margin-top:16px"><a class="btn btn--outline" href="../index.html">トップへ戻る</a></div></div>';
-  });
+  if(f){
+    function setErr(field,bad){var w=field.closest(".field");if(w)w.classList.toggle("is-error",bad);field.classList.toggle("is-error",bad);}
+    f.querySelectorAll("input,textarea,select").forEach(function(x){
+      x.addEventListener("input",function(){setErr(x,false);});
+    });
+    f.addEventListener("submit",function(e){
+      e.preventDefault();
+      var first=null;
+      function check(field,ok){setErr(field,!ok);if(!ok&&!first)first=field;}
+      check(f.company,f.company.value.trim()!=="");
+      check(f.name,f.name.value.trim()!=="");
+      check(f.email,/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim()));
+      if(first){first.focus();return;}
+      f.innerHTML='<div class="empty-state"><strong>送信を受け付けました（デモ）</strong>担当より1営業日以内にご連絡します。ありがとうございました。<div style="margin-top:16px"><a class="btn btn--outline" href="../index.html">トップへ戻る</a></div></div>';
+    });
+  }
 })();
 </script>
 <script src="../assets/js/main.js"></script>

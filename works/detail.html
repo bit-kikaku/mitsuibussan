@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>制作実績｜採用ツールポータル（仮）</title>
-<meta name="description" content="採用サイト・動画・パンフレット・縦型ショート動画の制作実績。各実績は商品と紐づき、同じ商品での発注がそのまま検討できます。">
+<meta name="description" content="採用ツールの制作実績（ケーススタディ）。課題・取り組み・成果と、使用した商品をまとめています。">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -30,35 +30,7 @@
   </div>
 </header>
 
-<main>
-  <div class="container">
-    <nav class="crumbs" aria-label="パンくず"><a href="../index.html">ホーム</a><span class="sep">/</span><span>実績</span></nav>
-  </div>
-
-  <section class="section section--tight">
-    <div class="container">
-      <div class="section__head">
-        <p class="eyebrow">Works</p>
-        <h1 class="section__title">制作実績</h1>
-        <p class="section__lead">各実績は商品と紐づいています。気になる実績から、同じ商品の詳細・見積もりへ進めます。</p>
-      </div>
-
-      <div class="trust" style="border-radius:var(--r-lg);margin-bottom:26px">
-        <div class="container trust__inner">
-          <div class="trust__stats">
-            <div class="tstat"><span class="tstat__num en">120<small>社+</small></span><span class="tstat__label">取引企業数</span></div>
-            <div class="tstat"><span class="tstat__num en">480<small>件+</small></span><span class="tstat__label">制作実績</span></div>
-            <div class="tstat"><span class="tstat__num en">4.6<small>/5</small></span><span class="tstat__label">平均満足度</span></div>
-          </div>
-          <div class="trust__logos"><span class="logo-chip">CLIENT</span><span class="logo-chip">CLIENT</span><span class="logo-chip">CLIENT</span></div>
-        </div>
-      </div>
-
-      <div class="works-grid" data-works></div>
-      <p class="note" style="margin-top:22px">※ 実績の数値・社名・画像はサンプルです。実際の実績に差し替えます（社名は匿名表記も可）。</p>
-    </div>
-  </section>
-</main>
+<main data-work></main>
 
 <footer class="site-footer">
   <div class="container">
@@ -76,19 +48,7 @@
 </footer>
 
 <script src="../assets/data/products.js"></script>
-<script>
-(function(){
-  var el=document.querySelector("[data-works]"); if(!el||!window.WORKS) return;
-  el.innerHTML=window.WORKS.map(function(w){
-    return '<a class="work-card" href="detail.html?id='+w.id+'">'+
-      '<div class="work-card__media ph '+w.tone+'" data-label="WORK"></div>'+
-      '<div class="work-card__body"><span class="work-card__tag">'+w.tag+'</span>'+
-      '<p class="work-card__title">'+w.title+'</p>'+
-      '<p class="work-card__client">'+w.client+'</p>'+
-      '<p style="font-size:.82rem;color:var(--muted);margin-top:6px">'+w.summary+'</p></div></a>';
-  }).join("");
-})();
-</script>
+<script src="../assets/js/work-detail.js"></script>
 <script src="../assets/js/main.js"></script>
 </body>
 </html>

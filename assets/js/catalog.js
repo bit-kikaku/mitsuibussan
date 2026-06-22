@@ -62,6 +62,7 @@
     var chipsWrap = document.querySelector("[data-chips]");
     var sortSel = document.querySelector("[data-sort]");
     var countEl = document.querySelector("[data-count]");
+    var searchEl = document.querySelector("[data-search]");
     var current = (location.hash || "").replace("#", "") || "all";
     if (!CATS.some(function (c) { return c.key === current; })) current = "all";
 
@@ -78,8 +79,13 @@
 
     function apply() {
       var list = current === "all" ? P.slice() : P.filter(function (p) { return p.cats.indexOf(current) !== -1; });
+      var term = searchEl ? searchEl.value.trim().toLowerCase() : "";
+      if (term) list = list.filter(function (p) {
+        return (p.name + " " + p.tagline + " " + p.catLabel + " " + p.summary).toLowerCase().indexOf(term) !== -1;
+      });
       list = sortList(list, sortSel ? sortSel.value : "popular");
       if (list.length) renderInto(el, list, base);
+      else if (term) el.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><strong>「' + term.replace(/[&<>"]/g, "") + '」に一致する商品がありません</strong>キーワードやカテゴリを変えてお試しください。お探しのものが無ければお気軽にお問い合わせください。</div>';
       else el.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><strong>準備中のカテゴリです</strong>このカテゴリの商品は近日公開予定です。お急ぎの場合はお問い合わせください。</div>';
       if (countEl) countEl.innerHTML = "<b>" + list.length + "</b> 件の商品";
       if (chipsWrap) chipsWrap.querySelectorAll(".chip").forEach(function (b) {
@@ -94,6 +100,7 @@
       apply();
     });
     if (sortSel) sortSel.addEventListener("change", apply);
+    if (searchEl) searchEl.addEventListener("input", apply);
     apply();
   }
 

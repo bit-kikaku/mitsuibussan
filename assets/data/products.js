@@ -131,14 +131,68 @@ window.SIM_OPTIONS = [
   { key: "rush", label: "お急ぎ納品", desc: "体制を強化し納期を短縮", add: 10, weeks: -1 }
 ];
 
-/* 実績（works）。MVPはサンプル数件。 */
+/* 実績（works）。MVPはサンプル。WordPress移行時は CPT(works)+ACF を想定。 */
 window.WORKS = [
-  { id: "w1", title: "製造業A社 採用サイト刷新", client: "製造業 / 従業員300名", product: "recs", tone: "tone-site", tag: "採用サイト", summary: "応募導線を整理し、エントリー数が前年比で増加。" },
-  { id: "w2", title: "IT企業B社 採用動画", client: "IT / 従業員120名", product: "movie", tone: "tone-movie", tag: "動画", summary: "社員密着の90秒動画で社風を可視化。説明会で活用。" },
-  { id: "w3", title: "サービス業C社 縦型ショート", client: "サービス / 従業員80名", product: "short", tone: "tone-short", tag: "動画 / SNS", summary: "縦型5本でSNS経由の認知が拡大。" },
-  { id: "w4", title: "医療法人D 採用パンフ", client: "医療 / 職員500名", product: "pamphlet", tone: "tone-pamph", tag: "パンフレット", summary: "合同説明会で配布、現場の雰囲気を一冊に。" },
-  { id: "w5", title: "ベンチャーE社 採用スタートセット", client: "IT / 従業員30名", product: "starter", tone: "tone-bundle", tag: "複合", summary: "サイト＋動画＋ロゴを一式で立ち上げ。" },
-  { id: "w6", title: "建設業F社 採用サイト＋動画", client: "建設 / 従業員200名", product: "starter", tone: "tone-site", tag: "複合", summary: "Webと動画の世界観を統一し採用広報を強化。" }
+  {
+    id: "w1", title: "製造業A社 採用サイト刷新", client: "製造業 / 従業員300名",
+    industry: "製造業", scale: "従業員300名", year: "2025", product: "recs",
+    tone: "tone-site", tag: "採用サイト", summary: "応募導線を整理し、エントリー数が前年比で増加。",
+    challenge: "公開から年数が経った採用サイトは情報が古く、募集要項からエントリーまでの導線が分かりづらいため、応募前の離脱が課題でした。",
+    solution: "情報設計を一から見直し、募集要項→エントリーを最短2クリックに整理。スマホ最適化とCMS導入で、現場でも更新できる体制にしました。",
+    scope: ["情報設計・ワイヤーフレーム", "デザイン刷新", "レスポンシブ実装", "CMS構築", "公開・運用レクチャー"],
+    results: [{ label: "エントリー数", value: "前年比 +38%" }, { label: "直帰率", value: "−22%" }, { label: "公開まで", value: "3週間" }],
+    quote: { text: "価格と納期が最初に分かったので、社内の稟議がとてもスムーズでした。", author: "製造業A社 人事ご担当者さま" }
+  },
+  {
+    id: "w2", title: "IT企業B社 採用動画", client: "IT / 従業員120名",
+    industry: "IT・通信", scale: "従業員120名", year: "2025", product: "movie",
+    tone: "tone-movie", tag: "動画", summary: "社員密着の90秒動画で社風を可視化。説明会で活用。",
+    challenge: "言葉だけでは社風や働く人の雰囲気が伝わりづらく、説明会での印象づけに弱さがありました。",
+    solution: "現場の社員に密着した90秒の採用動画を制作。リアルな会話と表情を切り取り、説明会冒頭とサイトのファーストビューで活用しました。",
+    scope: ["企画構成（絵コンテ）", "1日撮影（社員出演）", "編集・テロップ・BGM", "30秒ショート派生の書き出し"],
+    results: [{ label: "説明会満足度", value: "4.6 / 5" }, { label: "動画視聴維持率", value: "72%" }, { label: "制作期間", value: "4週間" }],
+    quote: { text: "“伝わらなかった社風”が、動画で一気に伝わるようになりました。", author: "IT企業B社 採用責任者さま" }
+  },
+  {
+    id: "w3", title: "サービス業C社 縦型ショート動画", client: "サービス / 従業員80名",
+    industry: "サービス", scale: "従業員80名", year: "2025", product: "short",
+    tone: "tone-short", tag: "動画 / SNS", summary: "縦型5本でSNS経由の認知が拡大。",
+    challenge: "若手・学生層への認知が弱く、求人媒体以外の接点をほとんど持てていませんでした。",
+    solution: "半日のまとめ撮りで縦型ショート動画を5本制作。トレンド音源と字幕でSNS最適化し、TikTok・Reels・Shortsへ展開しました。",
+    scope: ["型テンプレ構成", "半日まとめ撮り", "縦型編集・字幕・音源", "各SNS書き出し（5本）"],
+    results: [{ label: "SNS総再生", value: "12万回" }, { label: "プロフィール流入", value: "+3.1倍" }, { label: "制作期間", value: "2週間" }],
+    quote: { text: "低予算で本数を確保でき、SNSの“数打つ”施策に踏み出せました。", author: "サービス業C社 広報ご担当者さま" }
+  },
+  {
+    id: "w4", title: "医療法人D 採用パンフレット", client: "医療 / 職員500名",
+    industry: "医療・福祉", scale: "職員500名", year: "2024", product: "pamphlet",
+    tone: "tone-pamph", tag: "パンフレット", summary: "合同説明会で配布、現場の雰囲気を一冊に。",
+    challenge: "合同説明会で手元に残る資料が弱く、来場者に職場の雰囲気が伝わりきっていませんでした。",
+    solution: "現場を取材・撮影し、働く人の言葉と写真を軸に16ページで構成。Webサイトと写真・世界観を共通化しました。",
+    scope: ["企画・台割設計", "取材・原稿制作", "撮影", "デザイン（16P）", "印刷"],
+    results: [{ label: "説明会での持ち帰り率", value: "ほぼ100%" }, { label: "資料請求", value: "+27%" }, { label: "制作期間", value: "5週間" }],
+    quote: { text: "サイトとパンフの世界観が揃い、応募者の理解が深まりました。", author: "医療法人D 採用ご担当者さま" }
+  },
+  {
+    id: "w5", title: "ベンチャーE社 採用スタートセット", client: "IT / 従業員30名",
+    industry: "IT・スタートアップ", scale: "従業員30名", year: "2025", product: "starter",
+    tone: "tone-bundle", tag: "複合", summary: "サイト＋動画＋ロゴを一式で立ち上げ。",
+    challenge: "採用広報がほぼゼロからのスタートで、何から手をつければよいか分からない状態でした。",
+    solution: "簡易採用サイト・ショート動画・ロゴ最小構成をバンドルで一括制作。共通のまとめ撮りで素材を効率化し、総額・期間を圧縮しました。",
+    scope: ["簡易採用サイト", "ショート採用動画", "ロゴ調整", "共通まとめ撮り", "公開・初期設定"],
+    results: [{ label: "立ち上げ", value: "5週間で一式" }, { label: "初年度応募", value: "0→54名" }, { label: "単品比コスト", value: "約20%減" }],
+    quote: { text: "“まず一式そろう”のが本当に助かりました。迷いがなくなりました。", author: "ベンチャーE社 代表さま" }
+  },
+  {
+    id: "w6", title: "建設業F社 採用サイト＋動画", client: "建設 / 従業員200名",
+    industry: "建設", scale: "従業員200名", year: "2024", product: "starter",
+    tone: "tone-site", tag: "複合", summary: "Webと動画の世界観を統一し採用広報を強化。",
+    challenge: "サイトと動画を別々に発注していたため、トーンがバラバラで世界観が統一できていませんでした。",
+    solution: "サイトと動画を同一チームで一気通貫制作。撮影素材を共通化し、ファーストビューから動画・写真の世界観を統一しました。",
+    scope: ["採用サイト制作", "採用動画制作", "共通撮影ディレクション", "公開サポート"],
+    results: [{ label: "応募単価", value: "−18%" }, { label: "サイト滞在時間", value: "+44%" }, { label: "制作期間", value: "6週間" }],
+    quote: { text: "窓口がひとつになり、世界観も予算も一気に整理できました。", author: "建設業F社 人事部さま" }
+  }
 ];
 
 /* 表示ヘルパ（カタログ/詳細/実績で共用） */
