@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商品一覧｜採用ツールポータル（仮）</title>
+<meta name="description" content="採用サイト・動画・パンフレット・縦型ショート動画などの採用ツールを、価格・納期・実績を見ながら選べる商品一覧。用途で絞り込み、価格順・納期順に並べ替えできます。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/reset.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../index.html"><span class="brand__mark">R</span><span class="brand__name">RECRU MARKET<small>採用ツールポータル（仮）</small></span></a>
+    <nav class="gnav" aria-label="グローバルナビ">
+      <ul class="gnav__list">
+        <li><a class="gnav__link" href="../products/">商品一覧</a></li>
+        <li><a class="gnav__link" href="../estimate/">3分見積もり</a></li>
+        <li><a class="gnav__link" href="../works/">実績</a></li>
+        <li><a class="gnav__link" href="../column/">コラム</a></li>
+        <li><a class="gnav__link" href="../company/">会社情報</a></li>
+      </ul>
+      <a class="btn btn--primary header-cta" href="../contact/">お問い合わせ</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <nav class="crumbs" aria-label="パンくず"><a href="../index.html">ホーム</a><span class="sep">/</span><span>商品一覧</span></nav>
+  </div>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">Products</p>
+        <h1 class="section__title">採用ツール 商品一覧</h1>
+        <p class="section__lead">価格・納期・含まれる内容を見ながら選べます。用途で絞り込み、価格順・納期順に並べ替えできます。</p>
+      </div>
+
+      <div class="cat-chips" data-chips style="margin-bottom:18px"></div>
+
+      <div class="toolbar">
+        <span class="toolbar__count" data-count></span>
+        <label class="sort">並べ替え
+          <select data-sort>
+            <option value="popular">人気順</option>
+            <option value="price">価格が安い順</option>
+            <option value="delivery">納期が短い順</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="product-grid" data-catalog data-base=""></div>
+
+      <p class="note" style="margin-top:22px">※ 表示の価格・納期はサンプルです。実際の金額・納期は内容により変動し、正式お見積もりでご提示します。各商品の詳細ページから「この商品で見積もる」もご利用ください。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="fcol">
+        <a class="brand" href="../index.html"><span class="brand__mark">R</span><span class="brand__name">RECRU MARKET<small>採用ツールポータル（仮）</small></span></a>
+        <p class="site-footer__intro">採用ツールを、買い物感覚で。価格・納期・実績が見えるポータルです。</p>
+      </div>
+      <div class="fcol"><h4>商品</h4><a href="../products/#site">採用サイト</a><a href="../products/#movie">動画</a><a href="../products/#sns">SNS運用</a><a href="../products/#pamph">パンフレット</a></div>
+      <div class="fcol"><h4>サービス</h4><a href="../estimate/">3分見積もり</a><a href="../works/">実績</a><a href="../column/">コラム</a><a href="../contact/">お問い合わせ</a></div>
+      <div class="fcol"><h4>会社</h4><a href="../company/">会社情報</a><a href="../members/">先行案内</a><a href="../contact/">資料請求</a></div>
+    </div>
+    <div class="site-footer__bottom"><span>© 2026 採用ツールポータル（仮）</span><span>MVP / 静的プロトタイプ</span></div>
+  </div>
+</footer>
+
+<script src="../assets/data/products.js"></script>
+<script src="../assets/js/catalog.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

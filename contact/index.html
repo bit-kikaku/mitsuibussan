@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ・資料請求｜採用ツールポータル（仮）</title>
+<meta name="description" content="採用ツールのお見積もり・ご相談・資料請求はこちら。会社名・ご担当者・ご用途をご記入ください。営業を介さず、必要な分だけご相談いただけます。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/reset.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../index.html"><span class="brand__mark">R</span><span class="brand__name">RECRU MARKET<small>採用ツールポータル（仮）</small></span></a>
+    <nav class="gnav" aria-label="グローバルナビ">
+      <ul class="gnav__list">
+        <li><a class="gnav__link" href="../products/">商品一覧</a></li>
+        <li><a class="gnav__link" href="../estimate/">3分見積もり</a></li>
+        <li><a class="gnav__link" href="../works/">実績</a></li>
+        <li><a class="gnav__link" href="../column/">コラム</a></li>
+        <li><a class="gnav__link" href="../company/">会社情報</a></li>
+      </ul>
+      <a class="btn btn--primary header-cta" href="../contact/">お問い合わせ</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <nav class="crumbs" aria-label="パンくず"><a href="../index.html">ホーム</a><span class="sep">/</span><span>お問い合わせ</span></nav>
+  </div>
+
+  <section class="section section--tight">
+    <div class="container" style="max-width:720px">
+      <div class="section__head">
+        <p class="eyebrow">Contact</p>
+        <h1 class="section__title">お問い合わせ・資料請求</h1>
+        <p class="section__lead">お見積もり・ご相談・資料請求はこちらから。1営業日以内にご返信します。</p>
+      </div>
+
+      <form class="form" data-contact novalidate>
+        <div class="field--2">
+          <div class="field"><label>会社名 <span class="req">必須</span></label><input type="text" name="company" required></div>
+          <div class="field"><label>ご担当者名 <span class="req">必須</span></label><input type="text" name="name" required></div>
+        </div>
+        <div class="field--2">
+          <div class="field"><label>メールアドレス <span class="req">必須</span></label><input type="email" name="email" required></div>
+          <div class="field"><label>電話番号</label><input type="tel" name="tel"></div>
+        </div>
+        <div class="field">
+          <label>ご検討中の用途・商品</label>
+          <select name="product" data-product>
+            <option value="">選択してください（迷い中でもOK）</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>ご希望の種別</label>
+          <select name="type">
+            <option value="estimate">見積もり依頼</option>
+            <option value="consult">まず相談したい</option>
+            <option value="doc">資料請求</option>
+          </select>
+        </div>
+        <div class="field"><label>ご相談内容・ご質問</label><textarea name="message" rows="5" placeholder="例：採用サイトのリニューアルを検討中。予算◯◯万円、公開希望は◯月。"></textarea></div>
+        <p class="form__note">送信いただいた内容は、お見積もり・ご連絡の目的にのみ使用します。</p>
+        <button class="btn btn--primary btn--lg" type="submit">この内容で送信する</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="fcol">
+        <a class="brand" href="../index.html"><span class="brand__mark">R</span><span class="brand__name">RECRU MARKET<small>採用ツールポータル（仮）</small></span></a>
+        <p class="site-footer__intro">採用ツールを、買い物感覚で。価格・納期・実績が見えるポータルです。</p>
+      </div>
+      <div class="fcol"><h4>商品</h4><a href="../products/#site">採用サイト</a><a href="../products/#movie">動画</a><a href="../products/#sns">SNS運用</a><a href="../products/#pamph">パンフレット</a></div>
+      <div class="fcol"><h4>サービス</h4><a href="../estimate/">3分見積もり</a><a href="../works/">実績</a><a href="../column/">コラム</a><a href="../contact/">お問い合わせ</a></div>
+      <div class="fcol"><h4>会社</h4><a href="../company/">会社情報</a><a href="../members/">先行案内</a><a href="../contact/">資料請求</a></div>
+    </div>
+    <div class="site-footer__bottom"><span>© 2026 採用ツールポータル（仮）</span><span>MVP / 静的プロトタイプ</span></div>
+  </div>
+</footer>
+
+<script src="../assets/data/products.js"></script>
+<script>
+(function(){
+  var sel=document.querySelector("[data-product]");
+  if(sel&&window.PRODUCTS){
+    window.PRODUCTS.forEach(function(p){var o=document.createElement("option");o.value=p.id;o.textContent=p.short;sel.appendChild(o);});
+    var pre=new URLSearchParams(location.search).get("product");
+    if(pre) sel.value=pre;
+  }
+  var f=document.querySelector("[data-contact]");
+  if(f) f.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(!f.company.value||!f.name.value||!f.email.value){alert("会社名・ご担当者名・メールアドレスは必須です。");return;}
+    f.innerHTML='<div class="empty-state"><strong>送信を受け付けました（デモ）</strong>担当より1営業日以内にご連絡します。ありがとうございました。<div style="margin-top:16px"><a class="btn btn--outline" href="../index.html">トップへ戻る</a></div></div>';
+  });
+})();
+</script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

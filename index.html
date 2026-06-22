@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>採用ツールポータル（仮）｜採用ツールを、買い物感覚で。価格・納期が見える</title>
+<meta name="description" content="採用サイト・動画・パンフレット・SNS用ショート動画などの採用ツールを、価格・納期・実績を見ながら買い物感覚で頼めるポータル。3分見積もりで概算がすぐわかります。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/reset.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="index.html"><span class="brand__mark">R</span><span class="brand__name">RECRU MARKET<small>採用ツールポータル（仮）</small></span></a>
+    <nav class="gnav" aria-label="グローバルナビ">
+      <ul class="gnav__list">
+        <li><a class="gnav__link" href="products/">商品一覧</a></li>
+        <li><a class="gnav__link" href="estimate/">3分見積もり</a></li>
+        <li><a class="gnav__link" href="works/">実績</a></li>
+        <li><a class="gnav__link" href="column/">コラム</a></li>
+        <li><a class="gnav__link" href="company/">会社情報</a></li>
+      </ul>
+      <a class="btn btn--primary header-cta" href="contact/">お問い合わせ</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <!-- ヒーロー -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow">採用ツールの “ZOZOTOWN”</p>
+        <h1>採用ツールを、<br><span class="ac">買い物感覚</span>で頼める。</h1>
+        <p class="hero__lead">採用サイト・動画・パンフレット・縦型ショート動画。<strong>価格・納期・実績が見える</strong>から、相見積もりもヒアリングも要らない。気になる商品を選んで、3分で概算が出ます。</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="products/">商品を見る</a>
+          <a class="btn btn--outline btn--lg" href="estimate/">3分で見積もる</a>
+        </div>
+        <ul class="hero__points">
+          <li>価格を隠さない</li><li>納期がわかる</li><li>実績で選べる</li>
+        </ul>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__mini">
+          <div><div class="ph tone-site" style="aspect-ratio:4/3;border-radius:10px" data-label="PRODUCT"></div></div>
+          <div><div class="ph tone-movie" style="aspect-ratio:4/3;border-radius:10px" data-label="PRODUCT"></div></div>
+          <div><div class="ph tone-short" style="aspect-ratio:4/3;border-radius:10px" data-label="PRODUCT"></div></div>
+          <div><div class="ph tone-pamph" style="aspect-ratio:4/3;border-radius:10px" data-label="PRODUCT"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 信頼バンド -->
+  <section class="trust">
+    <div class="container trust__inner">
+      <div class="trust__stats">
+        <div class="tstat"><span class="tstat__num en">120<small>社+</small></span><span class="tstat__label">取引企業数</span></div>
+        <div class="tstat"><span class="tstat__num en">480<small>件+</small></span><span class="tstat__label">制作実績</span></div>
+        <div class="tstat"><span class="tstat__num en">2<small>週間〜</small></span><span class="tstat__label">最短着手</span></div>
+        <div class="tstat"><span class="tstat__num en">80<small>%+</small></span><span class="tstat__label">継続発注率</span></div>
+      </div>
+      <div class="trust__logos">
+        <span class="logo-chip">CLIENT</span><span class="logo-chip">CLIENT</span><span class="logo-chip">CLIENT</span><span class="logo-chip">CLIENT</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- カテゴリー -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head section__head--center reveal">
+        <p class="eyebrow">Category</p>
+        <h2 class="section__title">用途から探す</h2>
+        <p class="section__lead">いま必要な採用ツールから、ぴったりの一品を。</p>
+      </div>
+      <div class="cat-chips reveal" style="justify-content:center">
+        <a class="chip" href="products/#site">採用サイト</a>
+        <a class="chip" href="products/#movie">動画</a>
+        <a class="chip" href="products/#sns">SNS運用</a>
+        <a class="chip" href="products/#pamph">パンフレット</a>
+        <a class="chip" href="products/#slide">スライド</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 注目商品 -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap">
+        <div><p class="eyebrow">Products</p><h2 class="section__title">人気の採用ツール</h2></div>
+        <a class="btn btn--ghost" href="products/">すべての商品</a>
+      </div>
+      <div class="product-grid" data-featured data-base="products/" data-limit="5"></div>
+      <p class="note" style="margin-top:18px">※ 表示の価格・納期はサンプルです。実際の金額・納期は内容により変動し、正式お見積もりでご提示します。</p>
+    </div>
+  </section>
+
+  <!-- 3分見積もり -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="cta-band reveal">
+        <p class="eyebrow" style="color:#9fc0ff;justify-content:center">Quick Estimate</p>
+        <h2>“3分見積もり” で、ざっくり価格感がわかる</h2>
+        <p>用途・規模・オプションを選ぶだけ。概算金額と納期の目安がその場で表示されます。</p>
+        <a class="btn btn--primary btn--lg" href="estimate/">いますぐ見積もる</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 使い方 3ステップ -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head section__head--center reveal"><p class="eyebrow">How it works</p><h2 class="section__title">頼み方はかんたん3ステップ</h2></div>
+      <div class="product-grid reveal" style="grid-template-columns:repeat(3,1fr)">
+        <div class="pcard" style="padding:22px"><div class="price__label">STEP 1</div><h3 class="pcard__name">選ぶ</h3><p class="pcard__tagline">用途・価格・納期・実績を見ながら、気になる商品を選びます。</p></div>
+        <div class="pcard" style="padding:22px"><div class="price__label">STEP 2</div><h3 class="pcard__name">見積もる</h3><p class="pcard__tagline">3分見積もりで概算を確認。メールで詳細見積もりも受け取れます。</p></div>
+        <div class="pcard" style="padding:22px"><div class="price__label">STEP 3</div><h3 class="pcard__name">相談する</h3><p class="pcard__tagline">そのまま問い合わせ。営業を介さず、必要な分だけスムーズに発注。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 実績プレビュー -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap">
+        <div><p class="eyebrow">Works</p><h2 class="section__title">制作実績</h2></div>
+        <a class="btn btn--ghost" href="works/">実績をもっと見る</a>
+      </div>
+      <div class="works-grid reveal">
+        <a class="work-card" href="works/"><div class="work-card__media ph tone-site" data-label="WORK"></div><div class="work-card__body"><span class="work-card__tag">採用サイト</span><p class="work-card__title">製造業A社 採用サイト刷新</p><p class="work-card__client">製造業 / 従業員300名</p></div></a>
+        <a class="work-card" href="works/"><div class="work-card__media ph tone-movie" data-label="WORK"></div><div class="work-card__body"><span class="work-card__tag">動画</span><p class="work-card__title">IT企業B社 採用動画</p><p class="work-card__client">IT / 従業員120名</p></div></a>
+        <a class="work-card" href="works/"><div class="work-card__media ph tone-short" data-label="WORK"></div><div class="work-card__body"><span class="work-card__tag">動画 / SNS</span><p class="work-card__title">サービス業C社 縦型ショート</p><p class="work-card__client">サービス / 従業員80名</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 既存客向け先行案内 -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-band reveal" style="background:linear-gradient(120deg,#7a2410,#c0431c)">
+        <p class="eyebrow" style="color:#ffd2c2;justify-content:center">For Existing Clients</p>
+        <h2>お取引のあったお客様へ：先行案内・限定特典</h2>
+        <p>過去にご一緒したお客様向けに、先行のご案内と早期割をご用意しています。</p>
+        <a class="btn btn--primary btn--lg" href="members/">先行案内ページを見る</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="fcol">
+        <a class="brand" href="index.html"><span class="brand__mark">R</span><span class="brand__name">RECRU MARKET<small>採用ツールポータル（仮）</small></span></a>
+        <p class="site-footer__intro">採用ツールを、買い物感覚で。価格・納期・実績が見えるポータルです。</p>
+      </div>
+      <div class="fcol"><h4>商品</h4><a href="products/#site">採用サイト</a><a href="products/#movie">動画</a><a href="products/#sns">SNS運用</a><a href="products/#pamph">パンフレット</a></div>
+      <div class="fcol"><h4>サービス</h4><a href="estimate/">3分見積もり</a><a href="works/">実績</a><a href="column/">コラム</a><a href="contact/">お問い合わせ</a></div>
+      <div class="fcol"><h4>会社</h4><a href="company/">会社情報</a><a href="members/">先行案内</a><a href="contact/">資料請求</a></div>
+    </div>
+    <div class="site-footer__bottom"><span>© 2026 採用ツールポータル（仮）</span><span>MVP / 静的プロトタイプ</span></div>
+  </div>
+</footer>
+
+<script src="assets/data/products.js"></script>
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
