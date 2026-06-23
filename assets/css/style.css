@@ -282,6 +282,10 @@ body{font-family:var(--font);color:var(--ink);background:var(--bg);font-size:15p
 /* =============================================================
    ユーザビリティ強化（共通UI）
    ============================================================= */
+/* 3カラムグリッド（モバイルで1カラムに） */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
+@media(max-width:760px){.grid-3{grid-template-columns:1fr}}
+
 /* スキップリンク（アクセシビリティ） */
 .skip-link{position:fixed;left:10px;top:-60px;z-index:300;background:var(--navy);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;font-size:.86rem;transition:top .2s}
 .skip-link:focus{top:10px}
